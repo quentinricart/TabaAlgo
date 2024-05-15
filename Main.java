@@ -2,17 +2,26 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
-        Film[] films = HelperMethod.readFilms(10000);
-        boolean validChoice = false;
-        String attribute = "";
 
-        double sumAllIndexEven = HelperMethod.sumLengthForEvenRow(films, 0);
+        // Create a Scanner object to read input from the console
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read an array of Film objects from a file
+        Film[] films = HelperMethod.readFilms(5);
+        
+        // Calculate the sum of lengths for films at even index
+        double sumAllIndexEven = HelperMethod.sumLengthForEvenIndex(films, 0);
         System.out.println("The sum of all length from movie with an even index is " + sumAllIndexEven + "\n");
 
+        // Find the minimum film length in the array of films.
         double minLengthValue = HelperMethod.minLengthValue(films);
         System.out.println("The minimum length value is: " + minLengthValue + "\n");
 
+        // Flag to check if the user has made a valid attribute selection.
+        boolean validChoice = false;
+        String attribute = "";
+
+        // Loop until the user makes a valid selection for sorting.
         while(!validChoice){
             System.out.println("Choose an attribute to sort the films, the full file will be print afterwards:"
                                 + "\n1: Film ID"
@@ -26,7 +35,7 @@ public class Main {
             
             switch (choice) {
                 case "1":
-                    attribute = "filmId";
+                    attribute = "filmId"; 
                     validChoice = true;
                     break;
                 case "2":
@@ -46,31 +55,22 @@ public class Main {
                     validChoice = true;
                     break;
                 case "6":
-                    attribute = "rating";
+                    attribute = "rating"; 
                     validChoice = true;
                     break;
                 default:
+                //Wrong choice message
                     System.out.println("Invalid choice. Please select a valid option from 1 to 6.");
             }
         }
 
+        // Perform the sorting operation based on the selected attribute
         SortingMethod.divide(attribute, films);
 
+        // Print all films after sorting
         HelperMethod.printAllFilms(films);
 
+        // Close the scanner to prevent resource leaks
         scanner.close();
-
-        
-
-
-        
-
-
-
-
-
     }
-
-
-    
 }

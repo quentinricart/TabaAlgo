@@ -1,5 +1,7 @@
+
 public class Film implements Comparable<Film>{
 
+    // Member variables to hold film details.
     private int filmId;
     private String genre;
     private String directorName;
@@ -16,6 +18,7 @@ public class Film implements Comparable<Film>{
         this.rating = rating;
     }
 
+    // Getters and setters for film ID.
     public int getFilmId() {
         return filmId;
     }
@@ -24,6 +27,7 @@ public class Film implements Comparable<Film>{
         this.filmId = filmId;
     }
 
+    // Getters and setters for genre.
     public String getGenre() {
         return genre;
     }
@@ -32,6 +36,7 @@ public class Film implements Comparable<Film>{
         this.genre = genre;
     }
 
+    // Getters and setters for director's name.
     public String getDirectorName() {
         return directorName;
     }
@@ -40,6 +45,7 @@ public class Film implements Comparable<Film>{
         this.directorName = directorName;
     }
 
+    // Getters and setters for title.
     public String getTitle() {
         return title;
     }
@@ -48,6 +54,7 @@ public class Film implements Comparable<Film>{
         this.title = title;
     }
 
+    // Getters and setters for film length.
     public double getLength() {
         return length;
     }
@@ -56,6 +63,7 @@ public class Film implements Comparable<Film>{
         this.length = length;
     }
 
+    // Getters and setters for rating.
     public double getRating() {
         return rating;
     }
@@ -64,12 +72,13 @@ public class Film implements Comparable<Film>{
         this.rating = rating;
     }
 
+    // This class implements Comparable and compare by FilmId
     @Override
-    public int compareTo(Film film) {		
-	
-			return this.filmId - film.filmId;					
-	}
+    public int compareTo(Film film) {       
+            return this.filmId - film.filmId;                  
+    }
 
+    //Override the toString method
     @Override
     public String toString() {
         return "Id: " + filmId +

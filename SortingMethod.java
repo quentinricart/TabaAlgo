@@ -1,31 +1,42 @@
+// This class provides methods to sort arrays of Film objects based on various attributes
+//  Each sorting method implements a recursive merge sort algorithm tailored to a specific attribute
+
 public class SortingMethod {
 
+    //Each specific merge sort method is private but are called in this public method taking a string argument for the choice
     public static void divide(String choice, Film[] films){
         switch(choice){
             case "filmId":
+                // Call right method
                 divideId(films);
             break;
             case "genre":
+                // Call right method
                 divideGenre(films);
             break;
             case "director":
+                // Call right method
                 divideDirector(films);
             break;
             case "title":
+                // Call right method
                 divideTitle(films);
             break;
             case "length": 
+                // Call right method
                 divideLength(films);
             break;
             case "rating":
+                // Call right method
                 divideRating(films);
             break;
             default:
+                // If the argument is incorrect throw Exception
                 throw new IllegalArgumentException("Wrong argument added for the sorting method");            
 
         }
     }
-
+    // Sorts an array of films based on film ID using merge sort
     private static void divideId(Film[] films) {
         int len = films.length;
 
@@ -51,6 +62,7 @@ public class SortingMethod {
 	   mergeId(films, leftHalf, rightHalf);
     }
 
+    // Merges two halves of a film array sorted by film ID
     private static void mergeId (Film[] films, Film[] leftHalf, Film[] rightHalf) {
         int leftSize = leftHalf.length;
         int rightSize = rightHalf.length;
@@ -80,7 +92,8 @@ public class SortingMethod {
       }
     }
 
-      private static void divideGenre(Film[] films) {
+    // Sorts an array of films based on genre using merge sort
+    private static void divideGenre(Film[] films) {
         int len = films.length;
 
         if (len <=1) {
@@ -105,6 +118,7 @@ public class SortingMethod {
 	   mergeGenre(films, leftHalf, rightHalf);
     }
 
+    // Merges two halves of a film array sorted by genre
     private static void mergeGenre (Film[] films, Film[] leftHalf, Film[] rightHalf) {
 
         int leftSize = leftHalf.length;
@@ -149,6 +163,7 @@ public class SortingMethod {
 
     }
 
+    // Sorts an array of films based on director using merge sort
     private static void divideDirector(Film[] films) {
         int len = films.length;
 
@@ -174,6 +189,7 @@ public class SortingMethod {
 	   mergeDirector(films, leftHalf, rightHalf);
     }
 
+    // Merges two halves of a film array sorted by director
     private static void mergeDirector (Film[] films, Film[] leftHalf, Film[] rightHalf) {
 
         int leftSize = leftHalf.length;
@@ -218,6 +234,7 @@ public class SortingMethod {
 
     }
 
+    // Sorts an array of films based on title using merge sort
     private static void divideTitle(Film[] films) {
         int len = films.length;
 
@@ -243,6 +260,7 @@ public class SortingMethod {
 	   mergeTitle(films, leftHalf, rightHalf);
     }
 
+    // Merges two halves of a film array sorted by title
     private static void mergeTitle(Film[] films, Film[] leftHalf, Film[] rightHalf) {
 
         int leftSize = leftHalf.length;
@@ -287,6 +305,7 @@ public class SortingMethod {
 
     }
 
+    // Sorts an array of films based on length using merge sort
     private static void divideLength(Film[] films) {
         int len = films.length;
 
@@ -312,6 +331,7 @@ public class SortingMethod {
 	   mergeLength(films, leftHalf, rightHalf);
     }
 
+    // Merges two halves of a film array sorted by length
     private static void mergeLength(Film[] films, Film[] leftHalf, Film[] rightHalf) {
 
         int leftSize = leftHalf.length;
@@ -356,6 +376,7 @@ public class SortingMethod {
 
     }
 
+    // Sorts an array of films based on rating using merge sort
     private static void divideRating(Film[] films) {
         int len = films.length;
 
@@ -381,6 +402,7 @@ public class SortingMethod {
 	   mergeRating(films, leftHalf, rightHalf);
     }
 
+    // Merges two halves of a film array sorted by rating
     private static void mergeRating(Film[] films, Film[] leftHalf, Film[] rightHalf) {
 
         int leftSize = leftHalf.length;
