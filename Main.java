@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         
         // Read an array of Film objects from a file
-        Film[] films = HelperMethod.readFilms(5);
+        Film[] films = HelperMethod.readFilms(10000);
         
         // Calculate the sum of lengths for films at even index
         double sumAllIndexEven = HelperMethod.sumLengthForEvenIndex(films, 0);
